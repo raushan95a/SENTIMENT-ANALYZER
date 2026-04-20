@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer | Raushan</title>
+
+    <!-- Favicon (Emoji-based Brain/Sentiment) -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+
+    <!-- Modern Typography & Design Assets -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Play:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+
+    <!-- Low Level Security Meta Tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+
+    <!-- PyScript Stable Assets -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+
+    <py-config>
+        packages = ["textblob", "sqlite3"]
+    </py-config>
+</head>
+
+<body data-theme="dark">
+    <!-- Theme Toggle -->
+    <div class="theme-switch-wrapper">
+        <button class="theme-switch" id="theme-toggle" aria-label="Toggle Theme">
+            <svg id="theme-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="18.36" x2="5.64" y2="16.93"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Premium Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <h1 class="loader-logo">Sentiment Analyzer</h1>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <p id="loader-status" class="loader-status">Initializing Neural Core...</p>
+        </div>
+    </div>
+
+    <div class="background-radial"></div>
+
+    <div class="container fade-in">
+        <!-- Main Header Section -->
+        <header>
+            <h1 class="logo-text">Sentiment Analyzer</h1>
+            <p class="subtitle">A hybrid NLP engine utilizing rule-based linguistic patterns and neural network
+                classification for precise sentiment quantification.</p>
+            <div class="authors-badge">
+                <span>RAUSHAN</span>
+            </div>
+        </header>
+
+        <!-- Dynamic Analysis Interface -->
+        <main class="analysis-container">
+            <div class="input-card">
+                <textarea id="user-text" placeholder="Enter textual data for semantic analysis..."
+                    class="text-input"></textarea>
+                <button id="analyze-btn" class="pro-button" py-click="handle_analysis">Initialize Analysis</button>
+            </div>
+
+            <div id="result-overlay" class="result-card hidden">
+                <div class="result-header">
+                    <span class="label">Classification Outcome</span>
+                </div>
+                <div id="sentiment-output" class="sentiment-badge">Neutral</div>
+                <div class="result-footer">
+                    <p id="analysis-meta">Semantic Polarity Detection: 0.0</p>
+                </div>
+            </div>
+
+            <div id="loading-spinner" class="spinner hidden">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+                <p>Decoding Linguistics...</p>
+            </div>
+        </main>
+
+        <!-- System Footer -->
+        <footer class="fade-in">
+            <div class="footer-content">
+                <p class="authorship">Created by <a href="https://github.com/raush" target="_blank">Raushan</a></p>
+                <div class="footer-links">
+                    <a href="https://github.com/raush/SENTIMENT-ANALYZER" target="_blank" class="repo-link">
+                        <svg class="github-icon" viewBox="0 0 16 16" width="14" height="14">
+                            <path fill="currentColor"
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                            </path>
+                        </svg>
+                        GitHub Repository
+                    </a>
+                </div>
+                <p class="copyright">Licensed under MIT &nbsp;•&nbsp; © 2021</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- PyScript Logic Integration -->
+    <script type="py">
+        from textblob import TextBlob
+        import js
+        import asyncio
+
+        async def update_loader(percent, status):
+            js.document.getElementById("progress-bar").style.width = f"{percent}%"
+            js.document.getElementById("loader-status").innerHTML = status
+            await asyncio.sleep(0.05)
+
+        async def handle_analysis(event):
+            user_text = js.document.getElementById("user-text").value.strip()
+            result_div = js.document.getElementById("result-overlay")
+            output_badge = js.document.getElementById("sentiment-output")
+            meta_p = js.document.getElementById("analysis-meta")
+            spinner = js.document.getElementById("loading-spinner")
+
+            if not user_text:
+                return
+
+            result_div.classList.add("hidden")
+            spinner.classList.remove("hidden")
+
+            await asyncio.sleep(0.6)
+
+            try:
+                blob = TextBlob(user_text)
+                polarity = blob.sentiment.polarity
+                
+                if polarity < -0.1:
+                    sentiment = "Negative"
+                    color_class = "negative-text"
+                elif polarity > 0.1:
+                    sentiment = "Positive"
+                    color_class = "positive-text"
+                else:
+                    sentiment = "Neutral"
+                    color_class = "neutral-text"
+
+                output_badge.innerHTML = sentiment
+                output_badge.className = f"sentiment-badge {color_class}"
+                meta_p.innerHTML = f"Semantic Polarity Detection: {round(polarity, 4)}"
+
+                spinner.classList.add("hidden")
+                result_div.classList.remove("hidden")
+                result_div.classList.add("pop-in")
+            except Exception as e:
+                js.console.error(f"Analysis error: {str(e)}")
+                spinner.classList.add("hidden")
+
+        # Automatic Finalization Signal
+        async def init_sequence():
+            # Signal PyScript is ready, UI will handle hitting 100% smoothly
+            js.window.fadeLoader()
+
+        asyncio.ensure_future(init_sequence())
+    </script>
+
+    <!-- UI Logic: Theme & Loader -->
+    <script>
+        const bar = document.getElementById("progress-bar");
+        const status = document.getElementById("loader-status");
+        const wrapper = document.getElementById("loader-wrapper");
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeIcon = document.getElementById("theme-icon");
+        let progress = 0;
+        let isPyScriptReady = false;
+        let isFaded = false;
+
+        // Theme Management
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', newTheme);
+            updateThemeIcon(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'light') {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>'; // Moon
+            } else {
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="18.36" x2="5.64" y2="16.93"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>'; // Sun
+            }
+        }
+
+        // Initialize Theme preference
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.body.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        function fadeLoader() {
+            // Simply mark PyScript as ready; the interval will handle the smooth finish to 100%
+            isPyScriptReady = true;
+        }
+
+        window.fadeLoader = fadeLoader;
+
+        // Visual Progress Simulation
+        const loaderInterval = setInterval(() => {
+            if (isFaded) return;
+
+            if (isPyScriptReady) {
+                // PyScript is ready, fast-track to 100% smoothly
+                progress += (100 - progress) * 0.15 + 0.5;
+                if (progress >= 100) {
+                    progress = 100;
+                    bar.style.width = "100%";
+                    status.innerHTML = "Inference Engine Standby";
+
+                    // Final fade out after brief pause at 100%
+                    setTimeout(() => {
+                        isFaded = true;
+                        wrapper.classList.add("fade-out");
+                        clearInterval(loaderInterval);
+                    }, 400);
+                }
+            } else {
+                // Standard asymptotic crawl while waiting for PyScript
+                if (progress < 99) {
+                    const jump = (99.5 - progress) * 0.03;
+                    progress += Math.max(jump, 0.01);
+                }
+            }
+
+            bar.style.width = progress + "%";
+
+            if (!isPyScriptReady) {
+                if (progress > 15 && progress < 45) status.innerHTML = "Synchronizing Corpora...";
+                if (progress > 45 && progress < 80) status.innerHTML = "Loading Linguistic Models...";
+                if (progress >= 80) status.innerHTML = "Optimizing Neural Inference...";
+            }
+        }, 50);
+
+        // Safety timeout in case PyScript fails to trigger signal
+        setTimeout(() => {
+            if (!isPyScriptReady) fadeLoader();
+        }, 20000);
+
+        // --- Low Level Security & Anti-Right Click ---
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.onkeydown = function (e) {
+            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            if (e.keyCode == 123 ||
+                (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) ||
+                (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+                return false;
+            }
+        };
+
+        // --- Authors Easter Egg ---
+        let cheatCode = "";
+        const targetCode = "mega&amey";
+        document.addEventListener('keydown', (e) => {
+            cheatCode += e.key.toLowerCase();
+            if (cheatCode.includes(targetCode)) {
+                triggerEasterEgg();
+                cheatCode = "";
+            }
+            if (cheatCode.length > 20) cheatCode = cheatCode.substring(1);
+        });
+
+        function triggerEasterEgg() {
+            const authors = document.querySelector('.authors-badge');
+            if (authors) {
+                authors.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                authors.style.transform = 'scale(1.5) rotate(360deg)';
+                authors.style.background = 'linear-gradient(135deg, #FFD700, #FFA500)';
+                authors.style.color = '#000';
+
+                setTimeout(() => {
+                    authors.style.transform = 'scale(1) rotate(0deg)';
+                    authors.style.background = '';
+                    authors.style.color = '';
+                }, 3000);
+            }
+
+            console.log("%c 🔓 UNLOCKED: AUTHOR ACCESS %c", "background: #a162f7; color: #fff; font-weight: bold; border-radius: 4px; padding: 4px 10px;", "");
+            console.log("%c Developed by Raushan %c", "color: #4d90fe; font-weight: 600; font-family: 'Outfit', sans-serif;", "");
+            console.log("%c ⚡ Engine: Hybrid Rule-Based & Neural NLP %c", "color: #a0a0b0; font-style: italic;", "");
+            console.log("%c -------------------------------------------------- %c", "color: rgba(255,255,255,0.1);", "");
+            console.log("%c 📡 GitHub: https://github.com/raush %c", "color: #4d90fe;", "");
+        }
+    </script>
+</body>
+
+</html>
