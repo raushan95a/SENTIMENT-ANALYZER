@@ -56,7 +56,6 @@ SENTIMENT-ANALYZER/
 ![Landing Page](screenshots/01-landing-page.png)
 ![Input and Output Stage](screenshots/02-input-stage.png)
 
-- Use the live demo: https://raushan95a.github.io/SENTIMENT-ANALYZER/
 
 ## License
 Licensed under the MIT License. See [LICENSE](LICENSE).
