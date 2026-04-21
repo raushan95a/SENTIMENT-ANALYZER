@@ -16,10 +16,9 @@ As a finalized project, only the version listed below is authoritative:
 
 In accordance with established academic and professional standards for security disclosure, security-related observations associated with this project are documented through formal scholarly channels.
 
-To document a security concern, communication is facilitated with the project curators:
-  - **Curator**: [Amey Thakur](https://github.com/Amey-Thakur)
-  - **Collaborator**: [Mega Satish](https://github.com/msatmod)
-  - **Method**: Reports are submitted via the repository’s [GitHub Issues](https://github.com/Amey-Thakur/SENTIMENT-ANALYZER/issues) interface to formally record security-related findings.
+To document a security concern, communication is facilitated with the project curator:
+  - **Author**: [Raushan](https://github.com/raushan95a)
+  - **Method**: Reports are submitted via the repository's [GitHub Issues](https://github.com/raushan95a/SENTIMENT-ANALYZER/issues) interface to formally record security-related findings.
 
 Submissions include:
   1. A precise and technically accurate description of the identified issue.
@@ -28,7 +27,7 @@ Submissions include:
 
 ## Implementation Context: Linguistic Pattern Recognition
 
-This project consists of a multi-engine Sentiment Analysis platform, utilizing Linguistic Pattern Recognition (TextBlob) and Advanced Neural Network Classification (TensorFlow) for affective inference.
+This project consists of a multi-engine Sentiment Analysis platform, utilizing Linguistic Pattern Recognition (TextBlob) and Advanced Neural Network Classification (Hugging Face Transformers/DistilBERT) for affective inference.
 
 -   **Scope Limitation**: This policy applies exclusively to the documentation, code, and linguistic assets contained within this repository and does not extend to the runtime environment (WebAssembly/Browser) or third-party libraries.
 

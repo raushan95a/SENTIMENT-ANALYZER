@@ -13,11 +13,11 @@
         {
             "@type": "Person",
             "name": "Raushan",
-            "url": "https://github.com/raush"
+            "url": "https://github.com/raushan95a"
         }
     ],
     "dateReleased": "2021-06-30",
-    "codeRepository": "https://github.com/raush/SENTIMENT-ANALYZER",
+    "codeRepository": "https://github.com/raushan95a/SENTIMENT-ANALYZER",
     "developmentStatus": "complete",
     "applicationCategory": "Natural Language Processing / Sentiment Analysis",
     "keywords": [

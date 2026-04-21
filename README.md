@@ -5,12 +5,12 @@
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
   ![Status](https://img.shields.io/badge/Status-Completed-success)
-  [![Technology](https://img.shields.io/badge/Technology-Python%20%7C%20NLP-blueviolet)](https://github.com/raush/SENTIMENT-ANALYZER)
-  [![Developed by Raushan](https://img.shields.io/badge/Developed%20by-Raushan-blue.svg)](https://github.com/raush/SENTIMENT-ANALYZER)
+  [![Technology](https://img.shields.io/badge/Technology-Python%20%7C%20NLP-blueviolet)](https://github.com/raushan95a/SENTIMENT-ANALYZER)
+  [![Developed by Raushan](https://img.shields.io/badge/Developed%20by-Raushan-blue.svg)](https://github.com/raushan95a/SENTIMENT-ANALYZER)
 
   A hybrid Natural Language Processing engine utilizing rule-based linguistic patterns and neural network classification to accurately identify and quantify sentiment in textual data.
 
-  **[Source Code](Source%20Code/)** &nbsp;·&nbsp; **[Technical Specification](docs/SPECIFICATION.md)** &nbsp;·&nbsp; **[Live Demo](https://raush.github.io/SENTIMENT-ANALYZER/)**
+  **[Source Code](Source%20Code/)** &nbsp;·&nbsp; **[Technical Specification](docs/SPECIFICATION.md)** &nbsp;·&nbsp; **[Live Demo](https://raushan95a.github.io/SENTIMENT-ANALYZER/)**
 
 </div>
 
@@ -30,16 +30,14 @@
   <a name="authors"></a>
   ## Authors
 
-| <a href="https://github.com/raush"><img src="https://github.com/raush.png" width="150" height="150" alt="Raushan"></a><br>[**Raushan**](https://github.com/raush) |
+| <a href="https://github.com/raushan95a"><img src="https://github.com/raushan95a.png" width="150" height="150" alt="Raushan"></a><br>[**Raushan**](https://github.com/raushan95a) |
 | :---: |
 
 </div>
 
 > [!IMPORTANT]
 > ### 🤝🏻 Author & Contributor
-> *This project is developed and maintained by **[Raushan](https://github.com/raush)**.*
-
----
+> *This project is developed and maintained by **[Raushan](https://github.com/raushan95a)**.*
 
 <!-- OVERVIEW -->
 <a name="overview"></a>
@@ -103,10 +101,6 @@ SENTIMENT-ANALYZER/
 │
 ├── docs/                            # Project Documentation
 │   └── SPECIFICATION.md             # Technical Architecture
-│
-├── Mega/                            # Legacy Attribution Assets
-│   ├── Filly.jpg                    # Companion Image
-│   └── Mega.png                     # Profile Image
 │
 ├── screenshots/                     # Visual Gallery
 │   ├── 01-landing-page.png
@@ -201,7 +195,7 @@ SENTIMENT-ANALYZER/
 #### Step 1: Clone the Repository
 Open your terminal and clone the repository:
 ```bash
-git clone https://github.com/raush/SENTIMENT-ANALYZER.git
+git clone https://github.com/raushan95a/SENTIMENT-ANALYZER.git
 cd SENTIMENT-ANALYZER
 ```
 
@@ -226,10 +220,26 @@ Ensure your environment is active, then install the required libraries:
 pip install -r "Source Code/requirements.txt"
 ```
 
-#### Step 4: Linguistic Model Acquisition
-Synchronize the required corpora for the TextBlob engine:
+Or install individually:
+```bash
+pip install textblob>=0.17.1
+pip install transformers>=4.30.0
+pip install torch>=2.0.0
+pip install numpy>=1.23.5
+pip install pandas>=1.5.3
+pip install matplotlib>=3.7.1
+```
+
+#### Step 4: Download TextBlob Corpora
+Synchronize the required linguistic assets for TextBlob:
 ```bash
 python -m textblob.download_corpora
+```
+
+#### Step 5: Verify Installation
+Test if everything is installed correctly:
+```bash
+python -c "import textblob, transformers, torch; print('✓ All packages installed successfully!')"
 ```
 
 ### 3. Execution
@@ -244,7 +254,7 @@ python "Source Code/app.py"
 > 
 > Experience the interactive **Sentiment Analyzer** simulation directly in your browser through the working **GitHub Pages** deployment. This platform features a **Dual-Engine Core** that combines **rule-based heuristics** with **neural classification**, providing a visual demonstration of linguistic polarity detection and real-time affective state quantification.
 >
-> [**Launch Live Demo on GitHub Pages**](https://raush.github.io/SENTIMENT-ANALYZER/)
+> [**Launch Live Demo on GitHub Pages**](https://raushan95a.github.io/SENTIMENT-ANALYZER/)
 
 ---
 
@@ -283,11 +293,11 @@ Copyright © 2021-2026 Raushan
 <a name="about-this-repository"></a>
 ## About This Repository
 
-**Created & Maintained by**: [Raushan](https://github.com/raush)
+**Created & Maintained by**: [Raushan](https://github.com/raushan95a)
 
 This project features **Sentiment Analyzer**, a dual-engine linguistic classification system. It represents a personal exploration into **Python**-based natural language processing and high-performance web-service architecture via **WebAssembly**.
 
-**Connect:** [GitHub](https://github.com/raush)
+**Connect:** [GitHub](https://github.com/raushan95a)
 
 ### Acknowledgments
 
@@ -303,6 +313,6 @@ Special thanks to all contributors, mentors, and the open-source community whose
 
   <br>
 
-  🧠 **[Sentiment Analyzer](https://raush.github.io/SENTIMENT-ANALYZER/)**
+  🧠 **[Sentiment Analyzer](https://raushan95a.github.io/SENTIMENT-ANALYZER/)**
 
 </div>

@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this project or its associated academic materials, please cite them as below."
 authors:
 - name: "Raushan"
-  github: "https://github.com/raush"
+  github: "https://github.com/raushan95a"
 title: "Sentiment Analyzer"
 version: 1.0.0
 date-released: 2021-06-30
-url: "https://github.com/Amey-Thakur/SENTIMENT-ANALYZER"
+url: "https://github.com/raushan95a/SENTIMENT-ANALYZER"
