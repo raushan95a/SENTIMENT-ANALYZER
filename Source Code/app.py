@@ -1,9 +1,9 @@
 # ==============================================================================
 # PROJECT: Sentiment Analyzer
 # AUTHOR: RAUSHAN
-# GITHUB: https://github.com/raush
-# REPOSITORY: https://github.com/raush/SENTIMENT-ANALYZER
-# RELEASE DATE: June 30, 2021
+# GITHUB: https://github.com/raushan95a
+# REPOSITORY: https://github.com/raushan95a/SENTIMENT-ANALYZER
+# RELEASE DATE: 20 April, 2026
 # LICENSE: MIT License
 # DESCRIPTION: A robust Sentiment Analysis engine utilizing 
 #              Linguistic Pattern Recognition via the TextBlob framework.
@@ -68,7 +68,7 @@ def main():
     
     print("\n" + "="*80)
     print(" " * 25 + "SENTIMENT ANALYZER ENGINE v1.0")
-    print(" " * 20 + "Developed by Amey Thakur & Mega Satish")
+    print(" " * 25 + "Developed by Raushan")
     print("="*80 + "\n")
     
     print("[SYSTEM]: Initialization complete. Enter text for analysis.")

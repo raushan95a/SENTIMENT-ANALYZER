@@ -5,6 +5,7 @@
 # RELEASE DATE: June 30, 2021
 # LICENSE: MIT License
 # UPDATED: April 2026 - Migrated to Hugging Face Transformers for Python 3.14+ support
+# AUTHOR: https://github.com/raushan95a
 
 from transformers import pipeline
 
