@@ -26,43 +26,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Ensure Pages is enabled
-        run: |
-          set -e
-          API_URL="https://api.github.com/repos/${{ github.repository }}/pages"
-
-          STATUS=$(curl -s -o pages_get.json -w "%{http_code}" \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" \
-            "$API_URL")
-
-          if [ "$STATUS" = "404" ]; then
-            echo "Pages not configured. Creating site with Actions workflow build type..."
-            CREATE_STATUS=$(curl -s -o pages_create.json -w "%{http_code}" -X POST \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              -H "Accept: application/vnd.github+json" \
-              "$API_URL" \
-              -d '{"build_type":"workflow"}')
-
-            if [ "$CREATE_STATUS" -ge 400 ]; then
-              echo "Failed to create Pages site (HTTP $CREATE_STATUS)."
-              cat pages_create.json
-              exit 1
-            fi
-          fi
-
-          UPDATE_STATUS=$(curl -s -o pages_update.json -w "%{http_code}" -X PUT \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" \
-            "$API_URL" \
-            -d '{"build_type":"workflow"}')
-
-          if [ "$UPDATE_STATUS" -ge 400 ]; then
-            echo "Failed to set Pages build type to workflow (HTTP $UPDATE_STATUS)."
-            cat pages_update.json
-            exit 1
-          fi
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
