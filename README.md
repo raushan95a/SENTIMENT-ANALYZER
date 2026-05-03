@@ -51,6 +51,42 @@ SENTIMENT-ANALYZER/
 ├── CITATION.cff
 └── codemeta.json
 ```
+## Quick Start
+
+### 1. Clone
+```bash
+git clone https://github.com/raushan95a/SENTIMENT-ANALYZER.git
+cd SENTIMENT-ANALYZER
+```
+
+### 2. Create and Activate Virtual Environment
+Windows:
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+macOS/Linux:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r "Source Code/requirements.txt"
+python -m textblob.download_corpora
+```
+
+### 4. Run CLI Version
+```bash
+python "Source Code/app.py"
+```
+
+### 5. Run Web Version
+- Open [index.html](index.html) in a browser, or
+
+https://raushan95a.github.io/SENTIMENT-ANALYZER/
 
 ## Screenshots
 ![Landing Page](screenshots/01-landing-page.png)
